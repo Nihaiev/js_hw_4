@@ -1,12 +1,27 @@
-// Колбэк-функция
-function greet(name) {
-  consle.log(`Добро пожаловать ${name}.`);
+// // Колбэк-функция
+// function greet(name) {
+//   consle.log(`Добро пожаловать ${name}.`);
+// }
+
+// // Функция высшего порядка
+// function registerGuest(name, callback) {
+//   console.log(`Регистрируем гостя ${name}.`);
+//   callback(name);
+// }
+
+// registerGuest("Mango", greet);
+
+function deliverPizza(pizzaName) {
+  return `Delivering ${pizzaName} pizza.`;
 }
 
-// Функция высшего порядка
-function registerGuest(name, callback) {
-  console.log(`Регистрируем гостя ${name}.`);
-  callback(name);
+function makePizza(pizzaName) {
+  return `Pizza ${pizzaName} is being prepared, please wait...`;
 }
 
-registerGuest("Mango", greet);
+// Chande code below this line
+function makeMessage(pizzaName, callback) {
+  return callback(pizzaName);
+}
+console.log(makeMessage("Royal Grand", makePizza));
+console.log(makeMessage("Ultracheese", deliverPizza));
