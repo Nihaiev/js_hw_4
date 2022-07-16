@@ -9,3 +9,9 @@ numbers.forEach(function (number, index) {
 numbers.forEach((number, index) => {
   console.log(`Індекс ${index}, значення ${number}`);
 });
+
+const calculateTotalPrice = (orderedItems) => {
+  let totalPrice = 0;
+  orderedItems.forEach((item) => (totalPrice += item));
+  return totalPrice;
+}
